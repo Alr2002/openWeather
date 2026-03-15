@@ -1,5 +1,7 @@
 site_name: My test Open Weather API documentation
-site_url: https://Alr2002.github.io/openWeather
+site_url: https://Alr2002.github.io/openWeather/
+site_description: test mkdocs API docsite
+site_author: OR
 theme: 
   name: material
   font:
@@ -64,7 +66,7 @@ markdown_extensions:
 #    - icon: simple/linkedin
 #      link: https://linkedin.com/in/willettjames
 
-copyright: Copyright &copy; 2024 James Willett
+copyright: Copyright &copy; 2026 OR
   
 nav:
   - Home: index.md
