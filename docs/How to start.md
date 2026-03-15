@@ -32,10 +32,13 @@ https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={par
 `lang`|optional|You can use the `lang` parameter to get the output in your language. 
 
 ### Example of API Request
+```
 **GET** https://api.openweathermap.org/data/3.0/onecall?lat=46.47747&lon=30.73262&exclude=hourly,daily,minutely&units=metric&appid={API key}
+```
 
 ### Example of API Response
-```
+
+``` json
 {
     "lat": 46.4775,
     "lon": 30.7326,
