@@ -1,0 +1,76 @@
+site_name: My test Open Weather API documentation
+site_url: https://sitename.example
+theme: 
+  name: material
+  font:
+    text: Merriweather Sans
+  icon:
+  #  logo: fontawesome/solid/W
+  logo: assets/mmult.png
+  favicon: assets/favicon.ico
+# footer
+  features:
+    - navigation.footer
+
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+#      primary: green
+#      accent: deep purple
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue
+      accent: deep orange
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+# for codeblock
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  # for flowchart and diagrams
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+   
+# for tables
+  - pymdownx.tabbed:
+      alternate_style: true
+# callouts
+  - admonition
+  - pymdownx.details
+
+# don't work
+# extra:
+#  social:
+#    - icon: simple/youtube
+#      link: https://youtube.com/@james-willett
+#    - icon: simple/linkedin
+#      link: https://linkedin.com/in/willettjames
+
+copyright: Copyright &copy; 2024 James Willett
+  
+nav:
+  - Home: index.md
+  - About: About.md
+  - How to start: How to start.md
+  - Code-example: code-example.md
+  - Content-tabs: content-tabs.md
+  - Admonitions: admonitions.md
+  - Diagrams Example: diagram-example.md
