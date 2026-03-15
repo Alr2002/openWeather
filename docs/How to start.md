@@ -16,6 +16,7 @@ This endpoint is used to get access to current weather, minute forecast fo 1 hou
 ## How to make an API call
 
 ### API call
+
 ```
 https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
 ```
