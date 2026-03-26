@@ -1,0 +1,28 @@
+<html>
+   <meta charset="UTF-8">
+   <head>
+      <title>Sample page</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script>
+      
+// POSTMAN CODE GOES HERE
+      var settings = {
+  "url": "https://api.openweathermap.org/data/2.5/weather?lat=46.47747&lon=30.73262&units=metric&appid=bcdc2409f41a888cafcf7fa54a03406a",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+// тут вставляется обращение к точечн нотации из ответа
+  var content = response.wind.speed;
+$("#windSpeed").text(content);
+});
+// END_OF POSTMAN_CODE
+      </script>
+   </head>
+   <body>
+         <h1>Sample Page</h1>
+      wind speed: <span id="windSpeed"></span>
+   </body>
+</html>

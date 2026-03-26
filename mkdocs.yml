@@ -1,0 +1,107 @@
+site_name: Open Weather API Documentation Test Site
+site_url: https://alr2002.github.io/openWeather/
+site_description: Open Weather API Documentation Test Site
+site_author: OR
+
+nav:
+  - Overview: index.md
+  - Getting Started:
+      - How to start: how_to_start.md
+      - Example of API requests: example_of_API_request.md
+      - Example of API response: example_of_API_response.md
+      - Error handling: error_handling.md
+theme: 
+  name: material
+  palette:
+    # Dark Mode
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: blue grey
+      accent: deep blue
+
+    # Light Mode
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: blue grey
+      accent: indigo
+#  font:
+#    text: Roboto 
+    # Merriweather Sans
+  icon:
+    annotation: material/plus-circle
+  #  logo: fontawesome/solid/W
+  logo: assets/OR_logo_2.png
+  favicon: assets/favicon.ico
+    
+# footer
+  features:
+
+  #  - navigation.sections
+  #  - navigation.expand
+    - navigation.tracking
+    - navigation.instant
+    - navigation.path
+  # Optional but nice
+  #  - navigation.tabs        # top-level tabs (optional)
+    - navigation.top         # "back to top" button
+    - navigation.footer
+   
+    # Content
+    - content.code.copy
+#    - content.code.select
+    - content.code.annotate
+    - content.tooltips
+
+    # Search
+    - search.suggest 
+    - search.highlight
+    - search.share
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+# for codeblock
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  # for flowchart and diagrams
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+# for tables
+  - pymdownx.tabbed:
+      alternate_style: true
+# callouts
+  - admonition
+  - pymdownx.details
+# don't work
+# extra:
+#  social:
+#    - icon: simple/youtube
+#      link: https://youtube.com/@james-willett
+#    - icon: simple/linkedin
+#      link: https://linkedin.com/in/willettjames
+
+copyright: Copyright &copy; 2026 ALR2002
+
+plugins:
+#  - swagger-ui-ta
+  - search
+      
+# extra_css:
+#  - stylesheets/extra.css
+
+
+
