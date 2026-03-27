@@ -84,4 +84,4 @@ https://api.openweathermap.org/data/3.0/onecall?lat=46.47747&lon=30.73262&units=
         });
         ```
 
-
+<swagger-ui src="https://petstore.swagger.io/v2/swagger.json"/>

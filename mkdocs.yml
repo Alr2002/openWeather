@@ -94,10 +94,10 @@ markdown_extensions:
 #    - icon: simple/linkedin
 #      link: https://linkedin.com/in/willettjames
 
-copyright: Copyright &copy; 2026 ALR2002
+copyright: Copyright &copy; 2026 AL
 
 plugins:
-#  - swagger-ui-ta
+  - swagger-ui-ta
   - search
       
 # extra_css:
