@@ -1,0 +1,307 @@
+openapi: 3.1.0
+x-stoplight:
+  id: kppnzsj5ocnbd
+info:
+  title: Openweathermap API
+  version: '2.5'
+  summary: Get the current weather
+  description: "One Call API 3.0 is one of the most advanced APIs, allowing you to build your own\r\nweather forecast system with high accuracy and display a large \r\nnumber of environmental parameters. Data is available in JSON, XML, \r\nor HTML format. **Note**: This sample Swagger file covers the \r\n`current` endpoint only from the OpenWeatherMap API. \r\n<br/><br/> **Note**: All parameters are optional, but you must \r\nselect at least one parameter. Calling the API by city ID (using \r\nthe `id` parameter) will provide the most precise location results.\r\n"
+  contact:
+    name: Support
+    url: 'https://openweathermap.org/api'
+    email: alr2002@bigmir.net
+  termsOfService: 'https://openweathermap.org/terms'
+  license:
+    name: Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+    url: 'https://creativecommons.org/licenses/by-sa/4.0/'
+servers:
+  - url: 'https://api.openweathermap.org/data/3.0'
+    description: prod
+paths:
+  /onecall:
+    get:
+      summary: weather
+      tags:
+        - Weather endpoints
+        - Weather
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                x-examples:
+                  Example 1:
+                    lat: 46.4775
+                    lon: 30.7326
+                    timezone: Europe/Kyiv
+                    timezone_offset: 7200
+                    current:
+                      dt: 1772996948
+                      sunrise: 1772943848
+                      sunset: 1772985119
+                      temp: 6.04
+                      feels_like: 6.04
+                      pressure: 1033
+                      humidity: 66
+                      dew_point: 0.18
+                      uvi: 0
+                      clouds: 2
+                      visibility: 10000
+                      wind_speed: 0.76
+                      wind_deg: 328
+                      wind_gust: 1.34
+                      weather:
+                        - id: 800
+                          main: Clear
+                          description: clear sky
+                          icon: 01n
+                properties:
+                  lat:
+                    type: number
+                    description: '`lat` Latitude of the location, decimal (−90; 90)'
+                    example: 46.4775
+                  lon:
+                    type: number
+                    description: '`lon` Longitude of the location, decimal (-180; 180)'
+                    example: 30.7326
+                  timezone:
+                    type: string
+                    description: '`timezone` Timezone name for the requested location'
+                    example: '"Europe/Kyiv"'
+                  timezone_offset:
+                    type: integer
+                    description: '`timezone_offset` Shift in seconds from UTC'
+                    example: 7200
+                  current:
+                    type: object
+                    description: '`current` **Current weather data API response**'
+                    properties:
+                      dt:
+                        type: integer
+                        description: '`current.dt` Current time, Unix, UTC'
+                        example: 1772996948
+                      sunrise:
+                        type: integer
+                        description: '`current.sunrise` Sunrise time, Unix, UTC. For polar areas in midnight sun and polar night periods this parameter is not returned in the response'
+                        example: 1772943848
+                      sunset:
+                        type: integer
+                        description: '`current.sunset` Sunset time, Unix, UTC. For polar areas in midnight sun and polar night periods this parameter is not returned in the response'
+                        example: 1772985119
+                      temp:
+                        type: number
+                        description: '`current.temp` Temperature. Units - default: kelvin, metric: Celsius, imperial: Fahrenheit. **How to change units used**'
+                        example: 6.04
+                      feels_like:
+                        type: number
+                        description: '`current.feels_like` Temperature. This temperature parameter accounts for the human perception of weather. Units – default: kelvin, metric: Celsius, imperial: Fahrenheit.'
+                        example: 6.04
+                      pressure:
+                        type: integer
+                        description: '`current.pressure` Atmospheric pressure on the sea level, hPa'
+                        example: 1033
+                      humidity:
+                        type: integer
+                        description: '`current.humidity` Humidity, %'
+                        example: 66
+                      dew_point:
+                        type: number
+                        description: '`current.dew_point` Atmospheric temperature (varying according to pressure and humidity) below which water droplets begin to condense and dew can form. Units – default: kelvin, metric: Celsius, imperial: Fahrenheit'
+                        example: 0.18
+                      uvi:
+                        type: integer
+                        description: '`current.uvi` Current UV index.'
+                        example: 0
+                      clouds:
+                        type: integer
+                        description: '`current.clouds` Cloudiness, %'
+                        example: 2
+                      visibility:
+                        type: integer
+                        description: '`current.visibility` Average visibility, metres. The maximum value of the visibility is 10 km'
+                        example: 10000
+                      wind_speed:
+                        type: number
+                        description: '`current.wind_speed` Wind speed. Wind speed. Units – default: metre/sec, metric: metre/sec, imperial: miles/hour. **How to change units used**'
+                        example: 0.76
+                      wind_deg:
+                        type: integer
+                        description: '`current.wind_deg` Wind direction, degrees (meteorological)'
+                        example: 328
+                      wind_gust:
+                        type: number
+                        description: '`current.wind_gust` (where available) Wind gust. Units – default: metre/sec, metric: metre/sec, imperial: miles/hour. **How to change units used**'
+                        example: 1.34
+                      weather:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id:
+                              type: integer
+                              description: '`current.weather.id` **Weather condition id**'
+                              example: 800
+                            main:
+                              type: string
+                              description: '`current.weather.main` Group of weather parameters (Rain, Snow etc.)'
+                              example: '"Clear"'
+                            description:
+                              type: string
+                              description: '`current.weather.description` Weather condition within the group (**full list of weather conditions**). Get the output in your language'
+                              example: '"clear sky"'
+                            icon:
+                              type: string
+      operationId: get-weather
+      x-stoplight:
+        id: 0hdmapwf0ui46
+      description: "Paths:\r\n/onecall\r\n[Operation]: GET\r\nOperation ID: get-weather\r\nDescription: This endpoint is used to get access to current weather, minute forecast fo 1 hour, hourly forecast for 48 hours, daily forecast for 8 days and government weather alerts"
+      parameters:
+        - $ref: '#/components/parameters/lat'
+        - schema:
+            type: integer
+          in: query
+          name: lon
+          description: '**Longitude**, decimal (-180; 180). If you need the geocoder to automatic convert city names and zip-codes to geo coordinates and the other way around, please use our [Geocoding API](https://openweathermap.org/api/geocoding-api)'
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: appid
+          description: '**API key** Your unique API key (you can always find it on your account page under the "API key" tab)'
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: exclude
+          description: '**exclude** By using this parameter you can exclude some parts of the weather data from the API response. It should be a comma-delimited list (without spaces). Available values: `current` `minutely` `hourly` `daily` `alerts`'
+        - schema:
+            type: string
+            default: standard
+            enum:
+              - standard
+              - metric
+              - imperial
+            example: metric
+          in: query
+          name: units
+          description: '**units** Units of measurement `standard`,`metric` and `imperial` units are available. If you do not use the `units` parameter, `standard` units will be applied by default.'
+          allowEmptyValue: false
+        - schema:
+            type: string
+            default: en
+            enum:
+              - ar
+              - bg
+              - ca
+              - cz
+              - de
+              - el
+              - en
+              - fa
+              - fi
+              - fr
+              - gl
+              - hr
+              - hu
+              - it
+              - ja
+              - kr
+              - la
+              - lt
+              - mk
+              - nl
+              - pl
+              - pt
+              - ro
+              - ru
+              - se
+              - sk
+              - sl
+              - es
+              - tr
+              - ua
+              - vi
+              - zh_cn
+              - zh_tw
+          in: query
+          name: lang
+          description: '**lang** You can use the `lang` parameter to get the output in your language.'
+    parameters: []
+components:
+  schemas:
+    User:
+      title: User
+      type: object
+      description: ''
+      examples:
+        - id: 142
+          firstName: Alice
+          lastName: Smith
+          email: alice.smith@gmail.com
+          dateOfBirth: '1997-10-31'
+          emailVerified: true
+          signUpDate: '2019-08-24'
+      properties:
+        id:
+          type: integer
+          description: Unique identifier for the given user.
+          x-stoplight:
+            id: ea8z8yu1nvlez
+        firstName:
+          type: string
+          x-stoplight:
+            id: 1nuehofwdibey
+        lastName:
+          type: string
+          x-stoplight:
+            id: e5sftwb96i0b5
+        email:
+          type: string
+          format: email
+          x-stoplight:
+            id: 1ujg0i5smyrxh
+        dateOfBirth:
+          type: string
+          format: date
+          example: '1997-10-31'
+          x-stoplight:
+            id: h94l6glus5024
+        emailVerified:
+          type: boolean
+          description: Set to true if the user's email has been verified.
+          x-stoplight:
+            id: zxhh4bx3h4blj
+        createDate:
+          type: string
+          format: date
+          description: The date that the user was created.
+          x-stoplight:
+            id: 5w9r4fps6b6vj
+      required:
+        - id
+        - firstName
+        - lastName
+        - email
+        - emailVerified
+      x-stoplight:
+        id: frwh32l25zs5h
+  securitySchemes:
+    app_id:
+      name: appid
+      type: apiKey
+      in: query
+  parameters:
+    lat:
+      name: lat
+      in: query
+      required: false
+      schema:
+        type: integer
+      description: '**Latitude**, decimal (-90; 90). If you need the geocoder to automatic convert city names and zip-codes to geo coordinates and the other way around, please use our [Geocoding API](https://openweathermap.org/api/geocoding-api)'
+security:
+  - app_id: []
+tags:
+  - name: Weather
+  - name: Weather endpoints
